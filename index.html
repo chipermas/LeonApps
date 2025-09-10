@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeonApps - Diseño, Web & Soporte</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- NAVBAR -->
+<nav class="bg-white shadow-md fixed w-full z-20 top-0 left-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="#" class="text-2xl font-bold text-blue-600">MiEmpresa</a>
+      </div>
+
+      <!-- Botón hamburguesa (solo en móvil) -->
+      <div class="flex items-center md:hidden">
+        <button id="menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Links -->
+      <div id="menu" class="hidden md:flex space-x-6 items-center">
+        <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition">Inicio</a>
+        <a href="#servicios" class="text-gray-700 hover:text-blue-600 transition">Servicios</a>
+        <a href="#portafolio" class="text-gray-700 hover:text-blue-600 transition">Portafolio</a>        
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú móvil desplegable -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <a href="#inicio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Inicio</a>
+    <a href="#servicios" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Servicios</a>
+    <a href="#portafolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portafolio</a>
+    <a href="#contacto" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contacto</a>
+  </div>
+</nav>
+
+<!-- Script para abrir/cerrar menú móvil -->
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+  <!-- HERO -->
+  <section id="inicio" class="h-screen bg-gradient-to-r from-blue-600 to-blue-400 flex items-center justify-center text-center text-white px-6">
+    <div>
+      <h2 class="text-4xl md:text-6xl font-bold mb-4">Diseño Gráfico, Desarrollo Web y Soporte Técnico</h2>
+      <p class="text-lg md:text-xl mb-6">Impulsamos tu marca con soluciones creativas y tecnológicas.</p>
+      <a href="#contacto" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">Contáctanos</a>
+    </div>
+  </section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      
+      <!-- Diseño Gráfico -->
+      <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl hover:brightness-110 cursor-pointer text-center p-6">
+        <div class="flex justify-center mb-4">
+          <i class="fa-solid fa-paintbrush text-blue-600 text-4xl"></i>
+        </div>
+        <img src="https://placehold.co/600x400?text=Dise%C3%B1o+Gr%C3%A1fico" alt="Diseño Gráfico" class="w-full h-32 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg">Diseño Gráfico</h3>
+        <p class="text-gray-600 text-sm mt-2">Creación de logotipos, branding y material publicitario.</p>
+      </div>
+
+      <!-- Desarrollo Web -->
+      <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl hover:brightness-110 cursor-pointer text-center p-6">
+        <div class="flex justify-center mb-4">
+          <i class="fa-solid fa-laptop-code text-green-600 text-4xl"></i>
+        </div>
+        <img src="https://placehold.co/600x400?text=Desarrollo+Web" alt="Desarrollo Web" class="w-full h-32 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg">Desarrollo Web</h3>
+        <p class="text-gray-600 text-sm mt-2">Páginas web modernas, responsivas y optimizadas.</p>
+      </div>
+
+      <!-- Soporte Técnico -->
+      <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl hover:brightness-110 cursor-pointer text-center p-6">
+        <div class="flex justify-center mb-4">
+          <i class="fa-solid fa-screwdriver-wrench text-orange-600 text-4xl"></i>
+        </div>
+        <img src="https://placehold.co/600x400?text=Soporte+T%C3%A9cnico" alt="Soporte Técnico" class="w-full h-32 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg">Soporte Técnico</h3>
+        <p class="text-gray-600 text-sm mt-2">Mantenimiento preventivo y correctivo de equipos.</p>
+      </div>
+
+      <!-- Seguridad y Vigilancia -->
+      <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl hover:brightness-110 cursor-pointer text-center p-6">
+        <div class="flex justify-center mb-4">
+          <i class="fa-solid fa-video text-red-600 text-4xl"></i>
+        </div>
+        <img src="https://placehold.co/600x400?text=Seguridad+%26+Vigilancia" alt="Seguridad y Vigilancia" class="w-full h-32 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg">Seguridad y Vigilancia</h3>
+        <p class="text-gray-600 text-sm mt-2">Instalación de cámaras, sistemas de alarma y control de acceso.</p>
+      </div>
+
+      <!-- Redes e Internet -->
+      <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl hover:brightness-110 cursor-pointer text-center p-6">
+        <div class="flex justify-center mb-4">
+          <i class="fa-solid fa-network-wired text-purple-600 text-4xl"></i>
+        </div>
+        <img src="https://placehold.co/600x400?text=Redes+e+Internet" alt="Redes e Internet" class="w-full h-32 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg">Redes e Internet</h3>
+        <p class="text-gray-600 text-sm mt-2">Instalación y configuración de redes, cableado estructurado y soluciones de conectividad.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- PORTAFOLIO -->
+<section id="portafolio" class="py-20">
+  <div class="container mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-12">Portafolio</h3>
+
+    <!-- Filtros -->
+    <div class="flex justify-start md:justify-center space-x-3 overflow-x-auto pb-3 mb-10 scrollbar-hide">
+      <button class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-full flex-shrink-0" data-category="all">Todos</button>
+      <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full flex-shrink-0" data-category="design">Diseño Gráfico</button>
+      <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full flex-shrink-0" data-category="web">Desarrollo Web</button>
+      <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full flex-shrink-0" data-category="support">Soporte Técnico</button>
+      <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full flex-shrink-0" data-category="security">Seguridad y Vigilancia</button>
+      <button class="filter-btn bg-gray-200 px-4 py-2 rounded-full flex-shrink-0" data-category="redes">Redes e Internet</button>
+    </div>
+
+    <!-- Grid de proyectos -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6" id="portfolio-grid">
+
+      <!-- Proyecto Diseño -->
+      <div class="project bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition duration-500"
+           data-category="design"
+           data-title="Logo Empresa A"
+           data-description="Diseño de branding completo para empresa A."
+           data-image="https://placehold.co/600x400?text=Logo+Empresa+A"
+           data-link="">
+        <img src="https://placehold.co/600x400?text=Logo+Empresa+A" alt="Logo Empresa A" class="w-full h-40 object-cover">
+        <div class="p-4"><p class="text-center font-semibold">Logo Empresa A</p></div>
+      </div>
+
+      <div class="project bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition duration-500"
+           data-category="design"
+           data-title="Logo Empresa B"
+           data-description="Diseño de branding completo para empresa B."
+           data-image="https://placehold.co/600x400?text=Logo+Empresa+B"
+           data-link="">
+        <img src="https://placehold.co/600x400?text=Logo+Empresa+B" alt="Logo Empresa B" class="w-full h-40 object-cover">
+        <div class="p-4"><p class="text-center font-semibold">Logo Empresa B</p></div>
+      </div>
+
+      <!-- Proyecto Web -->
+      <div class="project bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition duration-500"
+           data-category="web"
+           data-title="Sitio Web B"
+           data-description="Landing page moderna y optimizada para empresa B."
+           data-image="https://placehold.co/600x400?text=Sitio+Web+B"
+           data-link="https://ejemplo.com">
+        <img src="https://placehold.co/600x400?text=Sitio+Web+B" alt="Sitio Web B" class="w-full h-40 object-cover">
+        <div class="p-4"><p class="text-center font-semibold">Sitio Web B</p></div>
+      </div>
+
+      <!-- Proyecto Soporte -->
+      <div class="project bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition duration-500"
+           data-category="support"
+           data-title="Mantenimiento PCs"
+           data-description="Optimización de equipos de oficina y soporte preventivo."
+           data-image="https://placehold.co/600x400?text=Mantenimiento+PCs"
+           data-link="">
+        <img src="https://placehold.co/600x400?text=Mantenimiento+PCs" alt="Mantenimiento PCs" class="w-full h-40 object-cover">
+        <div class="p-4"><p class="text-center font-semibold">Mantenimiento PCs</p></div>
+      </div>
+
+      <!-- Proyecto Seguridad -->
+      <div class="project bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition duration-500"
+           data-category="security"
+           data-title="Instalación CCTV"
+           data-description="Implementación de cámaras de seguridad en empresa local."
+           data-image="https://placehold.co/600x400?text=Instalacion+CCTV"
+           data-link="">
+        <img src="https://placehold.co/600x400?text=Instalacion+CCTV" alt="Instalación CCTV" class="w-full h-40 object-cover">
+        <div class="p-4"><p class="text-center font-semibold">Instalación CCTV</p></div>
+      </div>
+
+      <!-- Proyecto Seguridad -->
+      <div class="project bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition duration-500"
+           data-category="security"
+           data-title="Control de Acceso"
+           data-description="Sistema de control de accesos con tarjetas electrónicas."
+           data-image="https://placehold.co/600x400?text=Control+de+Acceso"
+           data-link="">
+        <img src="https://placehold.co/600x400?text=Control+de+Acceso" alt="Control de Acceso" class="w-full h-40 object-cover">
+        <div class="p-4"><p class="text-center font-semibold">Control de Acceso</p></div>
+      </div>
+      <!-- Proyecto Redes -->
+      <div class="project bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition duration-500"
+           data-category="redes"
+           data-title="Intalacion de cableado"
+           data-description="Instalacion de cableado en la empresa A"
+           data-image="https://placehold.co/600x400?text=Instalacion+de+Cableado"
+           data-link="">
+        <img src="https://placehold.co/600x400?text=Instalacion+de+Cableado" alt="Cableado" class="w-full h-40 object-cover">
+        <div class="p-4"><p class="text-center font-semibold">Cableado de Red</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-50 px-4">
+  <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full p-6 relative animate-fadeIn">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+    <img id="modalImage" src="" alt="Proyecto" class="rounded-lg mb-4 w-full h-80 object-cover">
+    <h3 id="modalTitle" class="text-2xl font-bold mb-2"></h3>
+    <p id="modalDescription" class="text-gray-600 mb-4"></p>
+    <a id="modalLink" href="#" target="_blank" class="hidden inline-block bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Ver Proyecto</a>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const projects = document.querySelectorAll(".project");
+  const modal = document.getElementById("modal");
+  const modalImage = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalLink = document.getElementById("modalLink");
+  const closeModal = document.getElementById("closeModal");
+
+  // Filtros
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.getAttribute("data-category");
+
+      filterBtns.forEach(b => b.classList.remove("bg-blue-600", "text-white"));
+      filterBtns.forEach(b => b.classList.add("bg-gray-200"));
+
+      btn.classList.add("bg-blue-600", "text-white");
+      btn.classList.remove("bg-gray-200");
+
+      projects.forEach(project => {
+        if (category === "all" || project.getAttribute("data-category") === category) {
+          project.classList.remove("opacity-0", "scale-90", "hidden");
+          project.classList.add("opacity-100", "scale-100");
+        } else {
+          project.classList.remove("opacity-100", "scale-100");
+          project.classList.add("opacity-0", "scale-90");
+          setTimeout(() => {
+            if (!project.classList.contains("opacity-100")) {
+              project.classList.add("hidden");
+            }
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // Modal
+  projects.forEach(project => {
+    project.addEventListener("click", () => {
+      const category = project.getAttribute("data-category");
+      modalImage.src = project.getAttribute("data-image");
+      modalTitle.textContent = project.getAttribute("data-title");
+      modalDescription.textContent = project.getAttribute("data-description");
+
+      const link = project.getAttribute("data-link");
+      if (category === "web" && link) {
+        modalLink.href = link;
+        modalLink.classList.remove("hidden");
+      } else {
+        modalLink.classList.add("hidden");
+      }
+
+      modal.classList.remove("hidden");
+    });
+  });
+
+  closeModal.addEventListener("click", () => modal.classList.add("hidden"));
+  window.addEventListener("click", e => { if (e.target === modal) modal.classList.add("hidden"); });
+</script>
+
+<!-- Estilos -->
+<style>
+  .animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+ <!-- BOTÓN FLOTANTE WHATSAPP CON TOOLTIP -->
+<div class="fixed bottom-5 right-5 z-50 group flex items-center space-x-2">
+  
+  <!-- Tooltip en desktop (aparece con hover) -->
+  <span class="hidden sm:block absolute right-16 bottom-1/2 translate-y-1/2 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-sm px-3 py-1 rounded-lg shadow-md transition-opacity text-center whitespace-nowrap">
+    ¡Escríbenos en WhatsApp!
+  </span>
+  
+  <!-- Tooltip siempre visible en móviles -->
+  <span class="block sm:hidden mr-3 bg-gray-800 text-white text-xs px-2 py-1 rounded-lg shadow-md text-center whitespace-nowrap">
+    ¡Escríbenos en WhatsApp!
+  </span>
+  
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/51987654321?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios"
+     target="_blank"
+     class="whatsapp-bubble bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+     <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
+</div>
+
+<!-- Estilos personalizados -->
+<style>
+  .whatsapp-bubble {
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
+    animation: pulse-glow 2s infinite;
+  }
+
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(37, 211, 102, 1);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
+    }
+  }
+</style>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-blue-600 text-white text-center py-6">
+    <p>&copy; LeonApps. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
