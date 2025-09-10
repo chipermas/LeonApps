@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LeonApps - Diseño, Web & Soporte</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/app.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -44,16 +46,6 @@
     <a href="#contacto" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contacto</a>
   </div>
 </nav>
-
-<!-- Script para abrir/cerrar menú móvil -->
-<script>
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
 
   <!-- HERO -->
   <section id="inicio" class="h-screen bg-gradient-to-r from-blue-600 to-blue-400 flex items-center justify-center text-center text-white px-6">
@@ -120,12 +112,9 @@
         <h3 class="font-bold text-lg">Redes e Internet</h3>
         <p class="text-gray-600 text-sm mt-2">Instalación y configuración de redes, cableado estructurado y soluciones de conectividad.</p>
       </div>
-
     </div>
   </div>
 </section>
-
-
 
 <!-- PORTAFOLIO -->
 <section id="portafolio" class="py-20">
@@ -250,7 +239,6 @@
         <img src="https://placehold.co/600x400?text=Instalacion+de+Cableado" alt="Cableado" class="w-full h-40 object-cover">
         <div class="p-4"><p class="text-center font-semibold">Cableado de Red</p></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -265,77 +253,6 @@
     <a id="modalLink" href="#" target="_blank" class="hidden inline-block bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Visitar Sitio</a>
   </div>
 </div>
-
-<!-- Script -->
-<script>
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const projects = document.querySelectorAll(".project");
-  const modal = document.getElementById("modal");
-  const modalImage = document.getElementById("modalImage");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalDescription = document.getElementById("modalDescription");
-  const modalLink = document.getElementById("modalLink");
-  const closeModal = document.getElementById("closeModal");
-
-  // Filtros
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const category = btn.getAttribute("data-category");
-
-      filterBtns.forEach(b => b.classList.remove("bg-blue-600", "text-white"));
-      filterBtns.forEach(b => b.classList.add("bg-gray-200"));
-
-      btn.classList.add("bg-blue-600", "text-white");
-      btn.classList.remove("bg-gray-200");
-
-      projects.forEach(project => {
-        if (category === "all" || project.getAttribute("data-category") === category) {
-          project.classList.remove("opacity-0", "scale-90", "hidden");
-          project.classList.add("opacity-100", "scale-100");
-        } else {
-          project.classList.remove("opacity-100", "scale-100");
-          project.classList.add("opacity-0", "scale-90");
-          setTimeout(() => {
-            if (!project.classList.contains("opacity-100")) {
-              project.classList.add("hidden");
-            }
-          }, 300);
-        }
-      });
-    });
-  });
-
-  // Modal
-  projects.forEach(project => {
-    project.addEventListener("click", () => {
-      const category = project.getAttribute("data-category");
-      modalImage.src = project.getAttribute("data-image");
-      modalTitle.textContent = project.getAttribute("data-title");
-      modalDescription.textContent = project.getAttribute("data-description");
-
-      const link = project.getAttribute("data-link");
-      if (category === "web" && link) {
-        modalLink.href = link;
-        modalLink.classList.remove("hidden");
-      } else {
-        modalLink.classList.add("hidden");
-      }
-
-      modal.classList.remove("hidden");
-    });
-  });
-
-  closeModal.addEventListener("click", () => modal.classList.add("hidden"));
-  window.addEventListener("click", e => { if (e.target === modal) modal.classList.add("hidden"); });
-</script>
-
-<!-- Estilos -->
-<style>
-  .animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
-  @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
-  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-</style>
 
  <!-- BOTÓN FLOTANTE WHATSAPP CON TOOLTIP -->
 <div class="fixed bottom-5 right-5 z-50 group flex items-center space-x-2">
@@ -357,30 +274,6 @@
      <i class="fab fa-whatsapp text-3xl"></i>
   </a>
 </div>
-
-<!-- Estilos personalizados -->
-<style>
-  .whatsapp-bubble {
-    box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
-    animation: pulse-glow 2s infinite;
-  }
-
-  @keyframes pulse-glow {
-    0% {
-      box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
-    }
-    50% {
-      box-shadow: 0 0 25px rgba(37, 211, 102, 1);
-    }
-    100% {
-      box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
-    }
-  }
-</style>
-
-
-
-
   <!-- FOOTER -->
   <footer class="bg-blue-600 text-white text-center py-6">
     <p>&copy; LeonApps. Todos los derechos reservados.</p>
